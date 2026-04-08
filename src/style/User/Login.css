@@ -137,7 +137,7 @@
   }
   .loginContainerb,
   .signupContainerb {
-    min-height: 80vh;
+    height: max-content;
   }
   .loginContainerx,
   .loginContainery {
