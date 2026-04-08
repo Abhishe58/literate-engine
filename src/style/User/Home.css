@@ -1,0 +1,239 @@
+.homeHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #dfdfdf;
+  z-index: 999;
+  background-color: white;
+}
+main {
+  position: relative;
+  padding-top: 62px;
+  display: flex;
+  min-height: calc(100vh - 62px);
+}
+.mainContainera {
+  position: sticky;
+  top: 0;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-right: 2px solid #dfdfdf;
+}
+.appointmentContainer {
+  position: relative;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 2px solid #dfdfdf;
+}
+.appoForm {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.appoformBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.appoInput {
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  border: 2px solid #dfdfdf;
+}
+.doctorListContainer {
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.docIco {
+  font-size: 20px;
+}
+.doctorList {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+}
+.doctorBox {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 10px;
+  transition: 1s;
+  width: 100%;
+  cursor: pointer;
+}
+.doctorBox:hover {
+  background-color: black;
+  color: white;
+}
+.mainContainerb {
+  position: relative;
+  padding: 1rem;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.appointementList {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: scroll;
+}
+.appointementList::-webkit-scrollbar {
+  display: none;
+}
+.appointementBox {
+  position: relative;
+  padding: 10px 10px;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: hsl(0, 0%, 95%);
+}
+.appointementreason {
+  font-size: 20px;
+  font-weight: 600;
+}
+.appointmentminBox {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.appointementBut {
+  padding: 5px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.rescheduleBut {
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.appointmentheader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.filterSelect {
+  padding: 10px;
+  border-radius: 10px;
+}
+.doctorFirstContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+.totalp {
+  padding: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  background-color: black;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 1s;
+}
+.totalp:hover {
+  background-color: royalblue;
+  color: white;
+}
+.mobileContainer {
+  display: none;
+}
+.appointmentContainerx {
+  display: none;
+}
+.doctorListContainerx {
+  display: none;
+}
+@media (max-width: 800px) {
+  .deskContainer {
+    display: none;
+  }
+
+  .mobileContainer {
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mainContainerb {
+    width: 94%;
+    left: 8%;
+  }
+  .mainContainera {
+    position: fixed;
+    top: 61px;
+    left: 0;
+    width: auto;
+    height: 100%;
+  }
+  .appointmentContainerx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 1rem;
+    width: 100%;
+    min-height: -webkit-fill-available;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 2px solid #dfdfdf;
+    background-color: white;
+  }
+  .doctorListContainerx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 1rem;
+    min-height: -webkit-fill-available;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .appointementList {
+    height: auto;
+    overflow-y: visible;
+  }
+}
