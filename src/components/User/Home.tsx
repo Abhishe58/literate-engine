@@ -198,7 +198,7 @@ export default function Home() {
   ).length;
 
   const complete = applicationList.filter(
-    (u) => u.status === "Complete",
+    (u) => u.status === "Completed",
   ).length;
 
   // const getDoctorList = async (id: any) => {
