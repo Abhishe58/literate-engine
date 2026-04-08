@@ -431,6 +431,7 @@ export default function Home() {
                             background: "royalblue",
                             color: "white",
                             cursor: "pointer",
+                            fontSize: "16px",
                           }}
                         >
                           re-schedule it
