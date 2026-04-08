@@ -135,11 +135,11 @@
     width: 100%;
   }
   .loginContainerb {
-    min-height: 44vh;
+    min-height: 80vh;
   }
   .loginContainerx,
   .loginContainery {
-    min-height: 66vh;
+    min-height: 80vh;
   }
 }
 @media (max-width: 738px) {
