@@ -64,7 +64,7 @@ export default function Home() {
 
   const appolistFun = () => {
     axios
-      .get("http://127.0.0.1:5000/appointmentget", {
+      .get("https://hospibackend.netlify.app/appointmentget", {
         headers: {
           Authorization: `Bearer ${token}`, // ✅ required
         },
@@ -81,7 +81,7 @@ export default function Home() {
       return;
     }
     axios
-      .get("http://127.0.0.1:5000/doctorlist", {
+      .get("https://hospibackend.netlify.app/doctorlist", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -107,7 +107,7 @@ export default function Home() {
 
     try {
       const res = await axios.post(
-        "http://127.0.0.1:5000/appointment",
+        "https://hospibackend.netlify.app/appointment",
         appointmentForm,
         {
           headers: {
@@ -137,7 +137,7 @@ export default function Home() {
   const cancleAppo = async (appointmentId: any) => {
     try {
       const res = await axios.patch(
-        `http://127.0.0.1:5000/appointementcancle/${appointmentId}`,
+        `https://hospibackend.netlify.app/appointementcancle/${appointmentId}`,
         {},
         {
           headers: {
@@ -174,7 +174,7 @@ export default function Home() {
   const rescheduleAppo = async (id: any) => {
     try {
       const res = await axios.patch(
-        `http://127.0.0.1:5000/reschedule/${id}`,
+        `https://hospibackend.netlify.app/reschedule/${id}`,
         resche,
         {
           headers: {

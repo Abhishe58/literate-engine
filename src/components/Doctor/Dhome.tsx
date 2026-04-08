@@ -54,7 +54,7 @@ export default function Dhome() {
 
   const getappoList = () => {
     axios
-      .get("http://127.0.0.1:5000/doctorappointement", {
+      .get("https://hospibackend.netlify.app/doctorappointement", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -86,7 +86,7 @@ export default function Dhome() {
   const cancleAppointment = async (id: any) => {
     try {
       const res = await axios.patch(
-        `http://127.0.0.1:5000/appointmentdoccancele/${id}`,
+        `https://hospibackend.netlify.app/appointmentdoccancele/${id}`,
         {},
         {
           headers: {
@@ -121,7 +121,7 @@ export default function Dhome() {
   const appoComplete = async (id: any) => {
     try {
       const res = await axios.patch(
-        `http://127.0.0.1:5000/doctorappocomplete/${id}`,
+        `https://hospibackend.netlify.app/doctorappocomplete/${id}`,
         {},
         {
           headers: {

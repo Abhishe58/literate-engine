@@ -20,7 +20,10 @@ export default function Login() {
   const handleForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://127.0.0.1:5000/login", form);
+      const res = await axios.post(
+        "https://hospibackend.netlify.app/login",
+        form,
+      );
       const data = await res.data;
       setStatus(data.message);
 

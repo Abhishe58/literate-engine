@@ -22,7 +22,7 @@ export default function Dsignup() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/dsignup", {
+      const res = await fetch("https://hospibackend.netlify.app/dsignup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

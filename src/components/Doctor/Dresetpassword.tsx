@@ -9,11 +9,14 @@ export default function Dresetpassword() {
 
   const resetPass = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const res = await fetch(`http://127.0.0.1:5000/dresetpassword/${tokenc}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
-    });
+    const res = await fetch(
+      `https://hospibackend.netlify.app/dresetpassword/${tokenc}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      },
+    );
 
     const data = await res.json();
     setNoti(data.message);
