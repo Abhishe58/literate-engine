@@ -134,7 +134,8 @@
   .signupContainerb {
     width: 100%;
   }
-  .loginContainerb {
+  .loginContainerb,
+  .loginContainera {
     min-height: 80vh;
   }
   .loginContainerx,
