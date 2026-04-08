@@ -35,7 +35,7 @@ export default function Dsignup() {
 
       if (res.ok) {
         setStatus(data.message);
-        navi("/");
+        navi("https://congenial-succotash-93s5.onrender.com/dlogin");
       }
     } catch (error: any) {
       setStatus(error.message);
