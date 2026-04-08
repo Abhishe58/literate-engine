@@ -99,10 +99,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow-y: scroll;
-}
-.appointementList::-webkit-scrollbar {
-  display: none;
 }
 .appointementBox {
   position: relative;
