@@ -51,20 +51,20 @@ export default function Home() {
     if (!decoded.exp) {
       // token has no expiry → treat as invalid
       localStorage.removeItem("token");
-      window.location.href = "/";
+      window.location.href = "https://congenial-succotash-93s5.onrender.com/";
     } else {
       const currentTime = Date.now() / 1000;
 
       if (decoded.exp < currentTime) {
         localStorage.removeItem("token");
-        window.location.href = "/";
+        window.location.href = "https://congenial-succotash-93s5.onrender.com/";
       }
     }
   }
 
   const appolistFun = () => {
     axios
-      .get("https://hospibackend.netlify.app/appointmentget", {
+      .get("https://congenial-succotash-93s5.onrender.com/appointmentget", {
         headers: {
           Authorization: `Bearer ${token}`, // ✅ required
         },
@@ -81,7 +81,7 @@ export default function Home() {
       return;
     }
     axios
-      .get("https://hospibackend.netlify.app/doctorlist", {
+      .get("https://congenial-succotash-93s5.onrender.com/doctorlist", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -107,7 +107,7 @@ export default function Home() {
 
     try {
       const res = await axios.post(
-        "https://hospibackend.netlify.app/appointment",
+        "https://congenial-succotash-93s5.onrender.com/appointment",
         appointmentForm,
         {
           headers: {
@@ -137,7 +137,7 @@ export default function Home() {
   const cancleAppo = async (appointmentId: any) => {
     try {
       const res = await axios.patch(
-        `https://hospibackend.netlify.app/appointementcancle/${appointmentId}`,
+        `https://congenial-succotash-93s5.onrender.com/appointementcancle/${appointmentId}`,
         {},
         {
           headers: {
@@ -174,7 +174,7 @@ export default function Home() {
   const rescheduleAppo = async (id: any) => {
     try {
       const res = await axios.patch(
-        `https://hospibackend.netlify.app/reschedule/${id}`,
+        `https://congenial-succotash-93s5.onrender.com/reschedule/${id}`,
         resche,
         {
           headers: {

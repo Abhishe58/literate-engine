@@ -21,7 +21,7 @@ export default function Dlogin() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://hospibackend.netlify.app/dlogin",
+        "https://congenial-succotash-93s5.onrender.com/dlogin",
         form,
       );
       const data = await res.data;

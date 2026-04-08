@@ -41,20 +41,20 @@ export default function Dhome() {
 
     if (!decode.exp) {
       localStorage.removeItem("token");
-      navi("/dlogin");
+      navi("https://congenial-succotash-93s5.onrender.com/dlogin");
     } else {
       const cuurentTime = Date.now() / 1000;
 
       if (decode.exp < cuurentTime) {
         localStorage.removeItem("token");
-        navi("/dlogin");
+        navi("https://congenial-succotash-93s5.onrender.com/dlogin");
       }
     }
   }
 
   const getappoList = () => {
     axios
-      .get("https://hospibackend.netlify.app/doctorappointement", {
+      .get("https://congenial-succotash-93s5.onrender.com/doctorappointement", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -86,7 +86,7 @@ export default function Dhome() {
   const cancleAppointment = async (id: any) => {
     try {
       const res = await axios.patch(
-        `https://hospibackend.netlify.app/appointmentdoccancele/${id}`,
+        `https://congenial-succotash-93s5.onrender.com/appointmentdoccancele/${id}`,
         {},
         {
           headers: {
@@ -121,7 +121,7 @@ export default function Dhome() {
   const appoComplete = async (id: any) => {
     try {
       const res = await axios.patch(
-        `https://hospibackend.netlify.app/doctorappocomplete/${id}`,
+        `https://congenial-succotash-93s5.onrender.com/doctorappocomplete/${id}`,
         {},
         {
           headers: {

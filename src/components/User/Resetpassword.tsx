@@ -10,7 +10,7 @@ export default function Resetpassword() {
   const resetPass = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await fetch(
-      `https://hospibackend.netlify.app/resetpassword/${tokenb}`,
+      `https://congenial-succotash-93s5.onrender.com/resetpassword/${tokenb}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

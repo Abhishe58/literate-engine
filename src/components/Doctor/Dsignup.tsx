@@ -22,11 +22,14 @@ export default function Dsignup() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://hospibackend.netlify.app/dsignup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        "https://congenial-succotash-93s5.onrender.com/dsignup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        },
+      );
       const data = await res.json();
       setStatus(data.message);
 

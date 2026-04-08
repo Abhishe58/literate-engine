@@ -21,7 +21,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://hospibackend.netlify.app/login",
+        "https://congenial-succotash-93s5.onrender.com/login",
         form,
       );
       const data = await res.data;

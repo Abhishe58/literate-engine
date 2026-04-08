@@ -21,11 +21,14 @@ export default function Signup() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://hospibackend.netlify.app/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        "https://congenial-succotash-93s5.onrender.com/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        },
+      );
       const data = await res.json();
       setStatus(data.message);
 

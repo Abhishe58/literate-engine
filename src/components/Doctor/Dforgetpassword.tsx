@@ -9,7 +9,7 @@ export default function Dforgetpassword() {
 
     try {
       const res = await fetch(
-        "https://hospibackend.netlify.app/dforgetpassword",
+        "https://congenial-succotash-93s5.onrender.com/dforgetpassword",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

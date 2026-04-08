@@ -9,7 +9,7 @@ export default function Forgetpassword() {
 
     try {
       const res = await fetch(
-        "https://hospibackend.netlify.app/forgetpassword",
+        "https://congenial-succotash-93s5.onrender.com/forgetpassword",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
