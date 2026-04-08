@@ -521,6 +521,8 @@ export default function Home() {
                       <p>
                         {docLis.dname} ({docLis.dspecialty})
                       </p>
+                      <p>Email: {docLis.demail}</p>
+                      <p>Phone Number: {docLis.dphonenumber}</p>
                     </div>
                   ))}
                 </div>
