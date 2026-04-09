@@ -47,9 +47,9 @@ export default function Signup() {
           <h1 className="loginTitle">Create Your Account</h1>
           <h2 className="loginSubtitle">Start your healthcare journey</h2>
           <p className="loginDes">
-            Sign up to book doctor appointments بسهولة, track your visits, and
-            manage your health records. Join our platform for a smooth, secure,
-            and convenient healthcare experience anytime.
+            Sign up to book doctor appointments, track your visits, and manage
+            your health records. Join our platform for a smooth, secure, and
+            convenient healthcare experience anytime.
           </p>
         </div>
         <div className="loginContainera">
