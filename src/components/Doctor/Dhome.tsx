@@ -69,20 +69,6 @@ export default function Dhome() {
       return;
     }
 
-    const getappoList = () => {
-      axios
-        .get(
-          "https://congenial-succotash-93s5.onrender.com/doctorappointement",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          },
-        )
-        .then((res) => setdcotorAppointmentList(res.data))
-        .catch((error) => console.log(error));
-    };
-
     getappoList();
 
     const interval = setInterval(getappoList, 60000);
