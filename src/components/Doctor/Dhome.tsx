@@ -36,22 +36,6 @@ export default function Dhome() {
   const navi = useNavigate();
   const [noti, setNoti] = useState("");
 
-  if (token) {
-    const decode = jwtDecode(token);
-
-    if (!decode.exp) {
-      localStorage.removeItem("token");
-      navi("https://congenial-succotash-93s5.onrender.com/dlogin");
-    } else {
-      const cuurentTime = Date.now() / 1000;
-
-      if (decode.exp < cuurentTime) {
-        localStorage.removeItem("token");
-        navi("https://congenial-succotash-93s5.onrender.com/dlogin");
-      }
-    }
-  }
-
   const getappoList = () => {
     axios
       .get("https://congenial-succotash-93s5.onrender.com/doctorappointement", {
@@ -68,12 +52,43 @@ export default function Dhome() {
       navi("/dlogin");
       return;
     }
+
+    const decode = jwtDecode(token);
+
+    if (!decode.exp) {
+      localStorage.removeItem("token");
+      navi("/dlogin");
+      return;
+    }
+
+    const currentTime = Date.now() / 1000;
+
+    if (decode.exp < currentTime) {
+      localStorage.removeItem("token");
+      navi("/dlogin");
+      return;
+    }
+
+    const getappoList = () => {
+      axios
+        .get(
+          "https://congenial-succotash-93s5.onrender.com/doctorappointement",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        )
+        .then((res) => setdcotorAppointmentList(res.data))
+        .catch((error) => console.log(error));
+    };
+
     getappoList();
-    const interval = setInterval(() => {
-      getappoList();
-    }, 60000);
+
+    const interval = setInterval(getappoList, 60000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [token]);
 
   const filterFun = dcotorAppointmentList.filter((dappo) => {
     if (appoFilter === "All") {

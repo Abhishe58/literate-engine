@@ -45,28 +45,11 @@ export default function Home() {
   // const [aboutDoc, setAboutDoc] = useState([])
   const navi = useNavigate();
 
-  if (token) {
-    const decoded = jwtDecode(token);
-
-    if (!decoded.exp) {
-      // token has no expiry → treat as invalid
-      localStorage.removeItem("token");
-      window.location.href = "https://congenial-succotash-93s5.onrender.com/";
-    } else {
-      const currentTime = Date.now() / 1000;
-
-      if (decoded.exp < currentTime) {
-        localStorage.removeItem("token");
-        window.location.href = "https://congenial-succotash-93s5.onrender.com/";
-      }
-    }
-  }
-
   const appolistFun = () => {
     axios
       .get("https://congenial-succotash-93s5.onrender.com/appointmentget", {
         headers: {
-          Authorization: `Bearer ${token}`, // ✅ required
+          Authorization: `Bearer ${token}`,
         },
       })
       .then((res) => setApplicationList(res.data))
@@ -74,24 +57,48 @@ export default function Home() {
         console.log("ERROR:", error.response?.data || error);
       });
   };
-
   useEffect(() => {
     if (!token) {
-      navi("/");
+      navi("/"); // ✅ use react navigation
       return;
     }
-    axios
-      .get("https://congenial-succotash-93s5.onrender.com/doctorlist", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => setDoctorList(res.data))
-      .catch((error) => {
-        console.log("ERROR:", error.response?.data || error);
-      });
 
-    appolistFun();
+    try {
+      const decoded = jwtDecode(token);
+
+      if (!decoded.exp) {
+        localStorage.removeItem("token");
+        navi("/");
+        return;
+      }
+
+      const currentTime = Date.now() / 1000;
+
+      if (decoded.exp < currentTime) {
+        localStorage.removeItem("token");
+        navi("/");
+        return;
+      }
+      const getDoctorList = () => {
+        axios
+          .get("https://congenial-succotash-93s5.onrender.com/doctorlist", {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
+          .then((res) => setDoctorList(res.data))
+          .catch((error) => {
+            console.log("ERROR:", error.response?.data || error);
+          });
+      };
+
+      appolistFun();
+      getDoctorList();
+    } catch (error) {
+      console.log("Invalid token");
+      localStorage.removeItem("token");
+      navi("/");
+    }
   }, [token]);
 
   const handleChange = async (
@@ -122,13 +129,9 @@ export default function Home() {
         appolistFun();
       }
     } catch (error: any) {
-      console.log("FULL ERROR:", error); // optional debug
-
       if (error.response) {
-        // ✅ backend sent response (400, 401, etc.)
         setNoti(error.response.data.message);
       } else {
-        // ❌ network error / server down
         setNoti("Something went wrong");
       }
     }
@@ -200,21 +203,6 @@ export default function Home() {
   const complete = applicationList.filter(
     (u) => u.status === "Completed",
   ).length;
-
-  // const getDoctorList = async (id: any) => {
-  //   try {
-  //     const res = await axios.get(`/aboutdoctor/${id}`,{
-  //       headers: {
-  //         Authorization: `Bearer ${token}`
-  //       }
-  //     })
-
-  //     const data = res.data;
-  //     setAboutDoc(data)
-  //   } catch (error: any) {
-  //     setNoti(error?.response?.data?.message || "Error to get about Doctor")
-  //   }
-  // }
 
   return (
     <>
