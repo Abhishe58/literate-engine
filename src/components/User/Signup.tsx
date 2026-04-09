@@ -44,14 +44,12 @@ export default function Signup() {
     <>
       <div className="loginWorld">
         <div className="signupContainerb">
-          <h1 className="loginTitle">Join the Restaurant Family!</h1>
-          <h2 className="loginSubtitle">
-            Create your account and start your culinary journey with us.
-          </h2>
+          <h1 className="loginTitle">Create Your Account</h1>
+          <h2 className="loginSubtitle">Start your healthcare journey</h2>
           <p className="loginDes">
-            Sign up today to savor exclusive offers, personalized
-            recommendations, and sneak peeks of our newest dishes. Your next
-            delicious experience is just a few clicks away!
+            Sign up to book doctor appointments بسهولة, track your visits, and
+            manage your health records. Join our platform for a smooth, secure,
+            and convenient healthcare experience anytime.
           </p>
         </div>
         <div className="loginContainera">

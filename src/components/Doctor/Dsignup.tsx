@@ -45,12 +45,12 @@ export default function Dsignup() {
     <>
       <div className="loginWorld">
         <div className="signupContainerb">
-          <h1 className="loginTitle">Join the Restaurant Family!</h1>
-          <h2>Create your account and start your culinary journey with us.</h2>
+          <h1 className="loginTitle">Join as a Doctor</h1>
+          <h2>Start managing patients digitally</h2>
           <p className="loginDes">
-            Sign up today to savor exclusive offers, personalized
-            recommendations, and sneak peeks of our newest dishes. Your next
-            delicious experience is just a few clicks away!
+            Create your doctor account to manage appointments, connect with
+            patients, and streamline your workflow. Experience a modern, secure
+            platform designed to simplify your daily medical operations.
           </p>
         </div>
         <div className="loginContainera">

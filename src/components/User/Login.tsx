@@ -41,14 +41,12 @@ export default function Login() {
     <>
       <div className="loginWorld">
         <div className="loginContainerb">
-          <h1 className="loginTitle">Welcome to Restaurant!</h1>
-          <h2 className="loginSubtitle">
-            Your culinary journey begins here—let’s make every meal memorable!
-          </h2>
+          <h1 className="loginTitle">Welcome Back</h1>
+          <h2 className="loginSubtitle">Access your health dashboard</h2>
           <p className="loginDes">
-            Experience the taste of freshness and tradition. Log in to explore
-            our menu, place your orders, and enjoy exclusive offers crafted just
-            for you.
+            Login to manage your appointments, view doctor details, and stay
+            updated with your health schedule. Fast, secure, and easy access to
+            all your bookings in one place.
           </p>
         </div>
         <div className="loginContainera">

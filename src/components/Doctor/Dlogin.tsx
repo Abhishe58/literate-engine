@@ -44,14 +44,12 @@ export default function Dlogin() {
     <>
       <div className="loginWorld">
         <div className="loginContainerb">
-          <h1 className="loginTitle">Welcome to Restaurant!</h1>
-          <h2>
-            Your culinary journey begins here—let’s make every meal memorable!
-          </h2>
+          <h1 className="loginTitle">Doctor Portal Login</h1>
+          <h2>Manage your appointments</h2>
           <p className="loginDes">
-            Experience the taste of freshness and tradition. Log in to explore
-            our menu, place your orders, and enjoy exclusive offers crafted just
-            for you.
+            Login to access your dashboard, manage patient appointments, and
+            stay organized. View schedules, update appointment status, and
+            provide better service with an easy and secure system.
           </p>
         </div>
         <div className="loginContainera">
