@@ -25,7 +25,7 @@ type Dcotorappo = {
 };
 
 export default function Dhome() {
-  const token = localStorage.getItem("token") || "null";
+  const token = localStorage.getItem("token");
   const doctor = JSON.parse(localStorage.getItem("doctor") || "null");
 
   const [dcotorAppointmentList, setdcotorAppointmentList] = useState<
@@ -53,7 +53,16 @@ export default function Dhome() {
       return;
     }
 
-    const decode = jwtDecode(token);
+    let decode;
+
+    try {
+      decode = jwtDecode(token);
+    } catch (error) {
+      console.log("Invalid token");
+      localStorage.removeItem("token");
+      navi("/dlogin");
+      return;
+    }
 
     if (!decode.exp) {
       localStorage.removeItem("token");

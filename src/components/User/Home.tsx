@@ -58,47 +58,58 @@ export default function Home() {
       });
   };
   useEffect(() => {
-    if (!token) {
-      navi("/"); // ✅ use react navigation
+    if (!token || token === "null" || token === "undefined") {
+      localStorage.removeItem("token");
+      navi("/");
       return;
     }
 
+    let decoded;
+
     try {
-      const decoded = jwtDecode(token);
+      decoded = jwtDecode(token);
 
-      if (!decoded.exp) {
-        localStorage.removeItem("token");
-        navi("/");
-        return;
+      // extra safety: check structure
+      if (!decoded || typeof decoded !== "object") {
+        throw new Error("Invalid token structure");
       }
-
-      const currentTime = Date.now() / 1000;
-
-      if (decoded.exp < currentTime) {
-        localStorage.removeItem("token");
-        navi("/");
-        return;
-      }
-      const getDoctorList = () => {
-        axios
-          .get("https://congenial-succotash-93s5.onrender.com/doctorlist", {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          })
-          .then((res) => setDoctorList(res.data))
-          .catch((error) => {
-            console.log("ERROR:", error.response?.data || error);
-          });
-      };
-
-      appolistFun();
-      getDoctorList();
     } catch (error) {
-      console.log("Invalid token");
+      console.log("JWT Decode Error:", error);
       localStorage.removeItem("token");
       navi("/");
+      return;
     }
+
+    // check expiry
+    if (!decoded.exp) {
+      localStorage.removeItem("token");
+      navi("/");
+      return;
+    }
+
+    const currentTime = Date.now() / 1000;
+
+    if (decoded.exp < currentTime) {
+      localStorage.removeItem("token");
+      navi("/");
+      return;
+    }
+
+    const getDoctorList = () => {
+      axios
+        .get("https://congenial-succotash-93s5.onrender.com/doctorlist", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => setDoctorList(res.data))
+        .catch((error) => {
+          console.log("ERROR:", error.response?.data || error);
+        });
+    };
+
+    appolistFun();
+    getDoctorList();
   }, [token]);
 
   const handleChange = async (
