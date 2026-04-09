@@ -27,6 +27,7 @@ export default function Dresetpassword() {
   return (
     <>
       <div className="loginWorld">
+        <div className="loginContainery"></div>
         <div className="loginContainera">
           <h1>Reset Password</h1>
           <form onSubmit={resetPass} className="loginForm">
@@ -49,7 +50,6 @@ export default function Dresetpassword() {
           </form>
           <p>{noti}</p>
         </div>
-        <div className="loginContainery"></div>
       </div>
     </>
   );

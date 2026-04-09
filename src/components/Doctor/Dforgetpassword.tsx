@@ -28,6 +28,7 @@ export default function Dforgetpassword() {
   return (
     <>
       <div className="loginWorld">
+        <div className="loginContainerx"></div>
         <div className="loginContainera">
           <h1>Reset Password</h1>
           <form onSubmit={subEmail} className="loginForm">
@@ -49,7 +50,6 @@ export default function Dforgetpassword() {
           </form>
           <p>{noti}</p>
         </div>
-        <div className="loginContainerx"></div>
       </div>
     </>
   );

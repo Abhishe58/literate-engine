@@ -44,6 +44,15 @@ export default function Dsignup() {
   return (
     <>
       <div className="loginWorld">
+        <div className="signupContainerb">
+          <h1 className="loginTitle">Join the Restaurant Family!</h1>
+          <h2>Create your account and start your culinary journey with us.</h2>
+          <p className="loginDes">
+            Sign up today to savor exclusive offers, personalized
+            recommendations, and sneak peeks of our newest dishes. Your next
+            delicious experience is just a few clicks away!
+          </p>
+        </div>
         <div className="loginContainera">
           <h1>Doctor-Signup</h1>
           <form onSubmit={handleForm} className="loginForm">
@@ -112,21 +121,12 @@ export default function Dsignup() {
             </button>
           </form>
           <p className="linkP">
-            hav a account?
-            <Link to="/dlogin" style={{ color: "royalblue" }}>
+            have a account?
+            <Link to="/dlogin" style={{ color: "royalblue", fontSize: "16px" }}>
               login
             </Link>
           </p>
           <p>{status}</p>
-        </div>
-        <div className="signupContainerb">
-          <h1 className="loginTitle">Join the Restaurant Family!</h1>
-          <h2>Create your account and start your culinary journey with us.</h2>
-          <p className="loginDes">
-            Sign up today to savor exclusive offers, personalized
-            recommendations, and sneak peeks of our newest dishes. Your next
-            delicious experience is just a few clicks away!
-          </p>
         </div>
       </div>
     </>

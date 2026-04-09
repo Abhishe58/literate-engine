@@ -43,6 +43,17 @@ export default function Dlogin() {
   return (
     <>
       <div className="loginWorld">
+        <div className="loginContainerb">
+          <h1 className="loginTitle">Welcome to Restaurant!</h1>
+          <h2>
+            Your culinary journey begins here—let’s make every meal memorable!
+          </h2>
+          <p className="loginDes">
+            Experience the taste of freshness and tradition. Log in to explore
+            our menu, place your orders, and enjoy exclusive offers crafted just
+            for you.
+          </p>
+        </div>
         <div className="loginContainera">
           <h1>Doctor-Login</h1>
           <form onSubmit={handleForm} className="loginForm">
@@ -70,30 +81,27 @@ export default function Dlogin() {
                 required
               />
             </div>
-            <Link to="/dforgetpassword">forgot password</Link>
+            <Link
+              to="/dforgetpassword"
+              style={{ color: "royalblue", fontSize: "16px" }}
+            >
+              forgot password
+            </Link>
             <button type="submit" className="loginBut">
               Login
             </button>
           </form>
           <p className="linkP">
             create a account?
-            <Link to="/dsignup" style={{ color: "royalblue" }}>
+            <Link
+              to="/dsignup"
+              style={{ color: "royalblue", fontSize: "16px" }}
+            >
               signup
             </Link>
           </p>
 
           <p>{status}</p>
-        </div>
-        <div className="loginContainerb">
-          <h1 className="loginTitle">Welcome to Restaurant!</h1>
-          <h2>
-            Your culinary journey begins here—let’s make every meal memorable!
-          </h2>
-          <p className="loginDes">
-            Experience the taste of freshness and tradition. Log in to explore
-            our menu, place your orders, and enjoy exclusive offers crafted just
-            for you.
-          </p>
         </div>
       </div>
     </>

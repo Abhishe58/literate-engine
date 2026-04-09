@@ -125,7 +125,7 @@
 
 @media (max-width: 825px) {
   .loginWorld {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
   .loginContainera,
   .loginContainerb,

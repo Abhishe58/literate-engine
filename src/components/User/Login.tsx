@@ -40,6 +40,17 @@ export default function Login() {
   return (
     <>
       <div className="loginWorld">
+        <div className="loginContainerb">
+          <h1 className="loginTitle">Welcome to Restaurant!</h1>
+          <h2 className="loginSubtitle">
+            Your culinary journey begins here—let’s make every meal memorable!
+          </h2>
+          <p className="loginDes">
+            Experience the taste of freshness and tradition. Log in to explore
+            our menu, place your orders, and enjoy exclusive offers crafted just
+            for you.
+          </p>
+        </div>
         <div className="loginContainera">
           <h1>Login</h1>
           <form onSubmit={handleForm} className="loginForm">
@@ -67,30 +78,24 @@ export default function Login() {
                 required
               />
             </div>
-            <Link to="/forgetpassword">forgot password</Link>
+            <Link
+              to="/forgetpassword"
+              style={{ color: "royalblue", fontSize: "16px" }}
+            >
+              forgot password
+            </Link>
             <button type="submit" className="loginBut">
               Login
             </button>
           </form>
           <p className="linkP">
             create a account?
-            <Link to="/signup" style={{ color: "royalblue" }}>
+            <Link to="/signup" style={{ color: "royalblue", fontSize: "16px" }}>
               signup
             </Link>
           </p>
 
           <p>{status}</p>
-        </div>
-        <div className="loginContainerb">
-          <h1 className="loginTitle">Welcome to Restaurant!</h1>
-          <h2 className="loginSubtitle">
-            Your culinary journey begins here—let’s make every meal memorable!
-          </h2>
-          <p className="loginDes">
-            Experience the taste of freshness and tradition. Log in to explore
-            our menu, place your orders, and enjoy exclusive offers crafted just
-            for you.
-          </p>
         </div>
       </div>
     </>
