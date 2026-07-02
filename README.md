@@ -1,73 +1,169 @@
-# React + TypeScript + Vite
+# Hospital Appointment System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack **Hospital Appointment Management System** built using the **MERN Stack**.
 
-Currently, two official plugins are available:
+This project provides separate portals for patients and doctors. Patients can find doctors, select available appointment slots, submit appointment details, and track appointment status. Doctors can manage their daily appointments, accept or cancel requests, reschedule appointments, and update consultation status.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Patient Portal
 
-## Expanding the ESLint configuration
+- Patient registration and login
+- Secure authentication using JWT
+- View all available doctors
+- Filter doctors by specialization
+- View doctor details
+- Select appointment date and available time slot
+- Enter symptoms, reason for visit, and contact details
+- Book an appointment
+- View upcoming appointments
+- View appointment history
+- Check appointment status
+- Cancel appointment requests
+- View rescheduled appointment details
+- Update patient profile
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Doctor Portal
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Doctor registration and login
+- Secure doctor dashboard
+- View today's appointments
+- View upcoming appointments
+- View patient appointment details
+- Accept pending appointment requests
+- Cancel appointments with a reason
+- Reschedule appointment date and time
+- Update appointment status
+- Mark appointment as completed
+- Mark patient as no-show
+- Manage doctor availability
+- Update doctor profile details
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Appointment Status
+
+| Status | Description |
+| --- | --- |
+| `Pending` | Appointment request is waiting for doctor approval. |
+| `Accepted` | Doctor has accepted the appointment. |
+| `Cancelled` | Appointment has been cancelled by the doctor or patient. |
+| `Rescheduled` | Doctor has changed the appointment date or time. |
+| `Completed` | Doctor has completed the patient consultation. |
+| `No Show` | Patient did not attend the appointment. |
+
+---
+
+## User Roles
+
+### Patient
+
+Patients can:
+
+- Create an account
+- Login securely
+- Search for doctors
+- Select appointment date and time
+- Book appointments
+- View appointment status
+- Cancel appointments
+- Update profile information
+
+### Doctor
+
+Doctors can:
+
+- Login to the doctor portal
+- View daily appointments
+- Accept or reject appointment requests
+- Cancel appointments
+- Reschedule appointments
+- Update appointment status
+- View patient details
+- Manage available appointment slots
+- Update doctor profile
+
+### Admin *(Future Feature)*
+
+Admins can:
+
+- Manage doctors
+- Manage patients
+- View all appointments
+- Add doctor specializations
+- Monitor appointment activity
+- Generate reports
+- Manage hospital settings
+
+---
+
+## Technology Stack
+
+### Frontend
+
+- React.js
+- React Router DOM
+- Fetch
+- Rest API
+- CSS
+
+### Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JSON Web Token (JWT)
+- bcrypt.js
+- dotenv
+
+---
+
+## Project Structure
+
+```bash
+hospital-appointment-system/
+│
+├── client/
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── layouts/
+│       ├── context/
+│       ├── services/
+│       ├── utils/
+│       ├── App.jsx
+│       └── main.jsx
+│
+├── server/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   ├── uploads/
+│   ├── server.js
+│   └── .env
+│
+├── README.md
+└── package.json
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Author
+
+**Abhishek**  
+MERN Stack Developer
+
+---
+
+## License
+
+This project is created for learning and portfolio purposes.
