@@ -6,6 +6,13 @@ This project provides separate portals for patients and doctors. Patients can fi
 
 ---
 
+## Live Demo
+
+Visit the live website here:
+
+[Patient Portal](https://hospitalappointnnent.netlify.app/)
+[Doctor Portal](https://hospitalappointnnent.netlify.app/dlogin)
+
 ## Features
 
 ### Patient Portal
